@@ -1,156 +1,63 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-	<link rel="shortcut icon" href="{{ STATIC_URL }}/favicon.ico"> 
-	<link rel="stylesheet" href="{{ STATIC_URL }}/css/style.css">
+  <title>Multi Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-	{% block header %}
-	<title>Welcome</title>
-	{% endblock %}
+  <!-- Favicons -->
+  <link href="static/img/favicon.png" rel="icon">
+  <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Multi - v4.7.0
+  * Template URL: https://bootstrapmade.com/multi-responsive-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
+
 <body>
-	{% block content %}
-	Main content
-	{% endblock %}
 
-	{% block scripts %}
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script src="{{ STATIC_URL }}/js/main.js"></script>
-        <!-- Affirm -->
-<script>
- /**************************************************************\
-            Include Affirm.js Snippet
-\**************************************************************/
-var _affirm_config = {
-  public_api_key: "XTWFXBS1RQWBI1KL",
-  /* replace with public api key */
-  script: "https://cdn1.affirm.com/js/v2/affirm.js"
-};
-(function(l, g, m, e, a, f, b) {
-  var d, c = l[m] || {},
-    h = document.createElement(f),
-    n = document.getElementsByTagName(f)[0],
-    k = function(a, b, c) {
-      return function() {
-        a[b]._.push([c, arguments])
-      }
-    };
-  c[e] = k(c, e, "set");
-  d = c[e];
-  c[a] = {};
-  c[a]._ = [];
-  d._ = [];
-  c[a][b] = k(c, a, b);
-  a = 0;
-  for (b = "set add save post open empty reset on off trigger ready setProduct".split(" "); a < b.length; a++) d[b[a]] = k(c, e, b[a]);
-  a = 0;
-  for (b = ["get", "token", "url", "items"]; a < b.length; a++) d[b[a]] = function() {};
-  h.async = !0;
-  h.src = g[f];
-  n.parentNode.insertBefore(h, n);
-  delete g[f];
-  d(g);
-  l[m] = c
-})(window, _affirm_config, "affirm", "checkout", "ui", "script", "ready");
+{% block content %}
 
-var checkout_mode = "modal";
+{% endblock %}
 
-var rad = document.checkout_mode_select.checkout_mode;
-var prev = null;
-for (var i = 0; i < rad.length; i++) {
-  rad[i].onclick = function() {
-    console.log(this.value);
-    checkout_mode = this.value;
-  };
-}
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <!-- Vendor JS Files -->
+  <script src="static/vendor/purecounter/purecounter.js"></script>
+  <script src="static/vendor/aos/aos.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/vendor/php-email-form/validate.js"></script>
 
-/**************************************************************\
-          Set Affirm Checkout Values
-\**************************************************************/
+  <!-- Template Main JS File -->
+  <script src="static/js/main.js"></script>
 
-
-
-
-/**************************************************************\
-              Handle the form submission
-\**************************************************************/
-$("#submit-form").click(function() {
-  affirm.checkout({
-
-    "config": {
-      "financial_product_key": "WARIIS19HH8IZGX1", //replace with your Affirm financial product key
-    },
-
-    "merchant": {
-      "user_cancel_url": "https://google.com",
-      "user_confirmation_url": "https://google.com",
-      "user_confirmation_url_action": "POST"
-    },
-
-    "metadata": {
-      "mode": checkout_mode
-    },
-
-    //shipping contact
-    "shipping": {
-      "name": {
-        "first": "John",
-        "last": "Doe"
-        // You can also include the full name
-        // "full" : "John Doe"
-      },
-      "address": {
-        "line1": "225 Bush Street",
-        "line2": "Floor 16",
-        "city": "San Francisco",
-        "state": "CA",
-        "zipcode": "94104"
-      },
-      "email": "joe.doe@email.com",
-      "phone_number": "4155555555"
-    },
-
-    // cart
-    "items": [{
-      "display_name": "Acme SLR-NG",
-      "sku": "ACME-SLR-NG-01",
-      "unit_price": 1500,
-      "qty": 1,
-      "item_image_url": "https://examplemerchant.com/static/item.png",
-      "item_url": "https://examplemerchant.com/acme-slr-ng-01.htm",
-    }],
-
-    // pricing / charge amount
-    "currency": "USD",
-    "discounts": {
-      "savemoney123": {
-        "discount_amount": 500
-      }
-    },
-    "tax_amount": 199,
-    "shipping_amount": 399,
-    "total": 1598
-  });
-  console.log(checkout_mode);
-  affirm.checkout.open({
-    onFail: function(a) {
-      console.log(a)
-    },
-    onSuccess: function(a) {
-      console.log(a)
-    }
-  });
-  //    affirm.checkout.open();
-});
-
-</script>
-<!-- End Affirm -->
-	{% endblock %}
 </body>
+
 </html>
